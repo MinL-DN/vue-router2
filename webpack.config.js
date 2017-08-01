@@ -13,7 +13,7 @@ module.exports = {
         path: path.join(__dirname, './public/dest'), //配置输出路径，文件地址，使用绝对路径形式
         filename: '[name].entry.js',//关于filename 我们有个变量就是 [name] = entry的key  当然还有别的变量比如[id],[hash]等,大家可以自行发挥
         publicPath: './public/dest/', // 公共文件生成的地址
-        chunkFilename: 'chunk[id].js?[chunkhash]'
+        chunkFilename: 'chunk[id]-[name].js?[chunkhash]'
     },
     // 加载器
     module: {
@@ -23,10 +23,14 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue'
             },
-            // // 转化ES6的语法
+            // 转化ES6的语法
             {
                 test: /\.js$/,
-                loader: 'babel-loader'
+                loader: 'babel-loader',
+                exclude: [
+                    path.resolve(__dirname, 'node_modules'),
+                ],
+
             },
             // 编译css并自动添加css前缀
             {
@@ -48,7 +52,8 @@ module.exports = {
     },
     // 语法转编
     babel: {
-        presets: ['es2015']
+        presets: ['es2015','es2015', 'stage-0'],
+        plugins: ['transform-runtime'],
     },
     plugins: [
         // 全局插件
@@ -72,8 +77,8 @@ module.exports = {
         extensions: ['', '.js', '.vue', '.less'],
         // 别名，可以直接使用别名来代表设定的路径以及其他
         alias: {
-            components: path.join(__dirname, './components'),
-            less: path.join(__dirname, './public/src/less/spa'),
+            components: path.join(__dirname, './public/components'),
+            less: path.join(__dirname, './public/less/spa'),
         }
     },
     // 开启source-map调试模式，webpack有多种source-map，在官网文档可以查到

@@ -1,0 +1,40 @@
+@import (reference) './app';
+
+.open-btn{
+    width: 80%;
+    background: #3385ff;
+    height: 30px;
+    color: #fff;
+    display: block;
+    border-radius: 2px;
+    margin: 50px auto 0;
+    text-align: center;
+}
+
+.img-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .img-mask{
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+    }
+    .label-box{
+        position: absolute;
+        background: #fff;
+        border-radius: 5px;
+        bottom: 60px;
+        top: 40px;
+        left: 40px;
+        right: 40px;
+        overflow: auto;
+        li{
+            border: 1px solid #f00;
+            margin: 5px;
+            padding: 2px 8px;
+        }
+    }
+}

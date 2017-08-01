@@ -8,12 +8,10 @@
 <script>
     require('less/bottomtab');
     export default {
-        data() {
-            return {
-                tablist: ['实时', '昨日', '本月'],
-                flag: 0
-            }
-        },
+        data: () => ({
+            tablist: ['实时', '昨日', '本月'],
+            flag: 0
+        }),
         methods: {
             go($index) {
                 var self = this;
