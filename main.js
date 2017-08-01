@@ -1,16 +1,14 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+let Vue = require('vue');
+let VueRouter = require('vue-router');
+let $ = require('jquery');
 
 Vue.use(VueRouter);
 
 new Vue({
-    el: '#app',
-    data: function(){
-        return {
-            bg: 'white',
-            watermark: viewData.watermark
-        };
-    },
+    data: () => ({
+        bg: 'white',
+        watermark: viewData.watermark
+    }),
     render: h => h(require('components/app')),
     methods: {
         setWaterMark: function(){
@@ -45,4 +43,4 @@ new Vue({
         }
     },
     router: new VueRouter(require('./router'))
-});
+}).$mount('#app');

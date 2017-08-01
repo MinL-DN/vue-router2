@@ -2,13 +2,13 @@ module.exports = {
     routes: [
         {
             path: '/',
-            component: require('components/home'),
+            component: r => require(['components/home'], r)
             // key: '整体概况'
         },
         {
             path: '/overview',
             components: {
-                default: require('components/overview'),
+                default: r => require(['components/overview'], r)
                 // 可以使用复合视图的！
                 // bottomtab: require('components/bottomtab')
             },
@@ -16,7 +16,7 @@ module.exports = {
         },
         {
             path: '/datalist',
-            component: require('components/datalist'),
+            component: r => require(['components/datalist'], r)
             // key: '数据统览'
         }
     ]
