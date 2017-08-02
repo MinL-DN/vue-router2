@@ -44,6 +44,7 @@ new Vue({
     },
     router: new VueRouter({
         routes: require('./router').routes,
-        // mode: 'history',
+        // h5 history 模式
+        mode: 'history'
     })
 }).$mount('#app');

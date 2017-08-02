@@ -7,4 +7,7 @@ module.exports = function(app){
 
     // Home模块
     app.use('/Home', require('./home'));
+
+    // Home模块
+    app.use('/spa', require('./detail'));
 };

@@ -1,7 +1,8 @@
 module.exports = {
     routes: [
         {
-            path: '/',
+            // path: /\/guoneiyou\/line\/t\dj\dp\d+c\d+\.html$/,
+            path: '/guoneiyou/line/t1j1p135758c0.html',
             component: r => require.ensure([], () => r(require('components/home')), 'home'),
         },
         {
