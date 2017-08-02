@@ -34,22 +34,23 @@
 </template>
 
 <script>
-    require('less/home');
-    let bgSrc = require('img/bg.png');
+    import 'less/home';
+    import bgSrc from 'img/bg.png';
+    import icon_1 from 'img/icon_1.png';
+    import icon_2 from 'img/icon_2.png';
+    import icon_3 from 'img/icon_3.png';
+    import icon_4 from 'img/icon_4.png';
 
     export default {
-        data() {
-            var _root = '';
-            return {
-                arr_img: {
-                    icon_1 : _root + '/icon_1.png',
-                    icon_2 : _root + '/icon_2.png',
-                    icon_3 : _root + '/icon_3.png',
-                    icon_4 : _root + '/icon_4.png',
-                    bg     : bgSrc
-                }
+        data: () => ({
+            arr_img: {
+                icon_1: icon_1,
+                icon_2: icon_2,
+                icon_3: icon_3,
+                icon_4: icon_4,
+                bg    : bgSrc
             }
-        },
+        }) ,
         mounted(){
             this.$root.hideloading();
         }

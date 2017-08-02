@@ -1,6 +1,6 @@
-let Vue = require('vue');
-let VueRouter = require('vue-router');
-let $ = require('jquery');
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import $ from 'jquery';
 
 Vue.use(VueRouter);
 
