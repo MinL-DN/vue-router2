@@ -35,17 +35,18 @@
 
 <script>
     require('less/home');
+    let bgSrc = require('img/bg.png');
 
     export default {
         data() {
-            var _root = './public/img';
+            var _root = '';
             return {
-                arr_img:{
+                arr_img: {
                     icon_1 : _root + '/icon_1.png',
                     icon_2 : _root + '/icon_2.png',
                     icon_3 : _root + '/icon_3.png',
                     icon_4 : _root + '/icon_4.png',
-                    bg     : _root + '/bg.png'
+                    bg     : bgSrc
                 }
             }
         },

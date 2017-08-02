@@ -42,5 +42,8 @@ new Vue({
             }, 500);
         }
     },
-    router: new VueRouter(require('./router'))
+    router: new VueRouter({
+        routes: require('./router').routes,
+        // mode: 'history',
+    })
 }).$mount('#app');
